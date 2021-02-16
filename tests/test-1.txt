@@ -1,0 +1,4 @@
+Input
+Hello, world!
+Output
+Hello, world!
