@@ -9,6 +9,7 @@ edition = "2018"
 [dependencies]
 criterion = "0.3.4"
 itertools = "0.10.0"
+rosalind_test_reader = { git = "https://github.com/stevenliebregt/rosalind-test-file-reader", branch = "main" }
 
 [profile.release]
 lto = "fat"
