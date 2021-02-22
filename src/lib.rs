@@ -26,7 +26,13 @@ pub fn run(config: Config) -> Result<String, Box<dyn Error>> {
     Ok(echo(&contents))
 }
 
-pub fn echo(input: &String) -> String {
+pub fn echo(input: &str) -> String {
+    // let sequences = input
+    //    .split('>')
+    //    .skip(1)
+    //    .map(|s| s.split_at(s.find('\n').unwrap()).1.replace('\n', ""))
+    //    .collect::<Vec<String>>();
+    
     String::from(input)
 }
 
