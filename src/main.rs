@@ -1,17 +1,14 @@
-use app::Config;
-use std::{env, process};
+use app::{my_function};
+use std::{env, fs};
 
 fn main() {
-    let config = Config::new(env::args()).unwrap_or_else(|err| {
-        eprintln!("Problem parsing arguments: {}", err);
-        process::exit(1);
-    });
+    let path = env::args().nth(1).unwrap();
+    let contents = fs::read_to_string(path).unwrap();
 
-    match app::run(config) {
-        Err(e) => {
-            eprintln!("Application error: {}", e);
-            process::exit(1);
-        }
-        Ok(result) => println!("{}", result),
-    }
+    let mut lines = contents.lines();
+
+    println!(
+        "{}",
+        my_function()
+    )
 }
